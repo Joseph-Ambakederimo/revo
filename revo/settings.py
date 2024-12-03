@@ -136,12 +136,21 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.hostinger.com'  # Use Hostinger's SMTP host
-EMAIL_PORT = 587  # Use 465 for SSL or 587 for TLS
-EMAIL_USE_TLS = True  # Use SSL if you're using port 465
-EMAIL_HOST_USER = 'admin@wat365solution.co.uk'  # Your domain email
-EMAIL_HOST_PASSWORD = 'Nyoreniit_1'  # Your domain email password
-DEFAULT_FROM_EMAIL = 'admin@wat365solution.co.uk'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.hostinger.com'  # Use Hostinger's SMTP host
+# EMAIL_PORT = 587  # Use 465 for SSL or 587 for TLS
+# EMAIL_USE_TLS = True  # Use SSL if you're using port 465
+# EMAIL_HOST_USER = 'admin@wat365solution.co.uk'  # Your domain email
+# EMAIL_HOST_PASSWORD = 'Nyoreniit_1'  # Your domain email password
+# DEFAULT_FROM_EMAIL = 'admin@wat365solution.co.uk'
 
 # CONTACT_EMAIL = 'contact@example.com'  # Email to receive contact form submissions
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Gmail SMTP server
+EMAIL_PORT = 587  # Use 587 for TLS
+EMAIL_USE_TLS = True  # Enable TLS
+EMAIL_HOST_USER = 'willandtime365@gmail.com'  # Your Gmail email address
+EMAIL_HOST_PASSWORD = 'nyoreniit'  # Use an app password (explained below)
+DEFAULT_FROM_EMAIL = 'willandtime365@gmail.com'  # Use your Gmail email address
