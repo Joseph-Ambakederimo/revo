@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/contact.css' %}">
+    <!-- <link rel = "stylesheet" href = "{% static 'css/home.css' %}"> -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <style>
+
+
+
+
+        
+.header {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+left: 0;
+width: 100%;
+padding: 1rem 0;
+z-index: 999;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin-right: 1rem;
+}
+
+.nav-link {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.btn-primary {
+          background-color: var(--primary-color);
+          color: var(--white);
+          padding: 0.75rem 1.5rem;
+          border-radius: 4px;
+          text-decoration: none;
+          transition: background-color 0.3s;
+          white-space: nowrap;
+        }
+        
+        .btn-primary:hover {
+          background-color: #0056b3;
+        }
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--dark);
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--dark);
+  transition: transform 0.3s;
+}
+
+.hamburger::before {
+  top: -6px;
+}
+
+.hamburger::after {
+  bottom: -6px;
+}
+
+@media (max-width: 768px) {
+  .nav-content {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    padding: 5rem 2rem;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: flex-start;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    z-index: 100;
+  }
+
+  .nav-content.active {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 0;
+  }
+
+  .mobile-menu-btn.active .hamburger {
+    background: transparent;
+  }
+
+  .mobile-menu-btn.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .mobile-menu-btn.active .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+}
+
+
+        
+
+
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Left Content */
+        .header-inner-left {
+            text-align: left;
+            padding-right: 2rem;
+        }
+
+        .header-inner-left h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .header-inner-left span {
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .lead {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .text-md {
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+            line-height: 1.7;
+            color: var(--dark);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        /* Button Styles */
+        .btn-group {
+            margin-top: 2rem;
+        }
+
+        .btn-light-blue {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-light-blue:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Right Content */
+        .header-inner-right {
+            position: relative;
+            height: 100%;
+        }
+
+        .header-inner-right img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-inner-left > * {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .header-inner-left h1 { animation-delay: 0.2s; }
+        .header-inner-left .lead { animation-delay: 0.4s; }
+        .header-inner-left .text-md { animation-delay: 0.6s; }
+        .header-inner-left .btn-group { animation-delay: 0.8s; }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .grid {
+                gap: 3rem;
+            }
+
+            .header-inner-left {
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-section {
+                padding: 4rem 1rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .header-inner-left {
+                text-align: center;
+                order: 1;
+            }
+
+            .header-inner-right {
+                order: 2;
+            }
+
+            .header-inner-right img {
+                max-height: 400px;
+            }
+
+            .text-md br {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-section {
+                padding: 3rem 1rem;
+            }
+
+            .header-inner-right img {
+                max-height: 300px;
+            }
+
+            .btn-light-blue {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    
+    {% include 'nav/navbar.html' %}
+    <br>
+    <br>
+    <br>
+    <!--heder inner code-->
+    <section class="header-section">
+      <div class="container">
+          <div class="grid">
+              <!-- Header Inner Left -->
+              <div class="header-inner-left">
+                  <h1>Contact <span>WAT-365.co.uk</span></h1>
+                  <p class="lead">Your trusted partner in staffing solutions.</p>
+                  <p class="text-md">
+                      We specialize in providing high-quality recruitment services for both permanent and temporary staff across multiple sectors, ensuring that your workforce needs are met with professionalism and efficiency.
+                  </p>
+                  
+              </div>
+
+              <!-- Header Inner Right -->
+              <div class="header-inner-right">
+                  <img src="{% static 'images/contact.jpg' %}" alt="Contact WAT-365">
+              </div>
+          </div>
+      </div>
+  </section>
+    <!-- end of header -->
+     
+
+    <section class="contact-section">
+      <div class="container">
+          <div class="contact-grid">
+              <!-- Map Section -->
+              <div class="map-container">
+                  <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38864.18361866668!2d-1.9319738529162294!3d52.49703184584676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bca25ea03029%3A0x556fb63d4541908d!2sFIRST%20HOUSE%20ASSOCIATES%20LTD!5e0!3m2!1sen!2sng!4v1729555195990!5m2!1sen!2sng"
+                      width="100%" 
+                      height="100%" 
+                      style="border:0;" 
+                      allowfullscreen="" 
+                      loading="lazy" 
+                      referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+              </div>
+  
+              <!-- Contact Form -->
+              <div class="contact-form">
+                  <div class="form-header">
+                      <h2>Contact Us</h2>
+                      <p class="subtitle">Reach Out To Us</p>
+                  </div>
+  
+                  <form method="POST" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                      <div class="form-group">
+                          <input 
+                              type="text" 
+                              class="form-control" 
+                              placeholder="Name" 
+                              required
+                          />
+                      </div>
+  
+                      <div class="form-group">
+                        <input type = "email" name="email" class = "form-control" placeholder="Email" required>
+                      </div>
+  
+                      <div class="form-group">
+                        <input type="number" name="phone" class = "form-control" placeholder="Phone" required>
+                      </div>
+  
+                      <div class="form-group">
+                        <textarea rows = "4" name="message" placeholder="Your Message" class = "form-control"></textarea>
+                      </div>
+  
+                      <button type="submit" class="submit-button">
+                          <span>Send Message</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <line x1="5" y1="12" x2="19" y2="12"></line>
+                              <polyline points="12 5 19 12 12 19"></polyline>
+                          </svg>
+                      </button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <!-- <section id = "contact" class = "contact py">
+        <div class = "container grid">
+            <div class = "contact-right text-white text-center bg-blue">
+                <div class = "contact-head">
+                    <h3 class = "lead">Contact Us</h3>
+                    <p class = "text text-md"> <h3 style="color: darkgray;">Reach Out To US.</h3></p>
+                </div>
+                <form method="POST" action="{% url 'contact' %}">  
+                    {% csrf_token %}  
+                    <div class = "form-element">
+                        <input type = "text" name="name" class = "form-control" placeholder="Name" required>
+                    </div>
+                    <div class = "form-element">
+                        <input type = "email" name="email" class = "form-control" placeholder="Email" required>
+                    </div>
+                    <div class = "form-element">
+                        <input type="number" name="phone" class = "form-control" placeholder="Phone" required>
+                    </div>
+                    <div class = "form-element">
+                        <textarea rows = "4" name="message" placeholder="Your Message" class = "form-control"></textarea>
+                    </div>
+                    <button type = "submit" class = "btn btn-white btn-submit">
+                        <i class = "fas fa-arrow-right"></i> Send Message
+                    </button>
+                </form>
+            </div>        
+            <div class = "contact-left">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38864.18361866668!2d-1.9319738529162294!3d52.49703184584676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bca25ea03029%3A0x556fb63d4541908d!2sFIRST%20HOUSE%20ASSOCIATES%20LTD!5e0!3m2!1sen!2sng!4v1729555195990!5m2!1sen!2sng" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section> -->
+    <!-- end of contact section -->
+
+	{% include 'footer/footer.html' %}
+
+
+<!-- footer  -->
+
+<!-- end of footer  -->
+</body>
+</html>
