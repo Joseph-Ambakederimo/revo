@@ -62,31 +62,25 @@ def contact(request):
         phone = request.POST.get('phone', '')  # Optional field
         message = request.POST.get('message')
 
+        # Validate required fields
         if not name or not email or not message:
             return HttpResponse('Please fill out all required fields.', status=400)
 
-        # Save the data in the Contact model
-        contact_entry = Contact(
-            name=name,
-            email=email,
-            phone=phone,
-            message=message,
-        )
-        contact_entry.save()
-
-        # Send an email
+        # Prepare the email content
         email_subject = f'Contact Form Submission from {name}'
         email_body = f'Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage:\n{message}'
 
         try:
+            # Send the email
             send_mail(
                 email_subject,
                 email_body,
-                settings.DEFAULT_FROM_EMAIL,
-                [settings.EMAIL_HOST_USER],  # Send to your domain email
+                settings.DEFAULT_FROM_EMAIL,  # Sender email (set in settings)
+                [settings.EMAIL_HOST_USER],  # Recipient email (set in settings)
                 fail_silently=False,
             )
-            return redirect('success')  # Redirect to success page
+            # Redirect to success page
+            return redirect('success')
         except Exception as e:
             return HttpResponse(f'An error occurred while sending the email: {e}', status=500)
 
