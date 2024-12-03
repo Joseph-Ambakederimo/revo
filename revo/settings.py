@@ -141,7 +141,7 @@ EMAIL_HOST = 'smtp.hostinger.com'  # Use Hostinger's SMTP host
 EMAIL_PORT = 587  # Use 465 for SSL or 587 for TLS
 EMAIL_USE_TLS = True  # Use SSL if you're using port 465
 EMAIL_HOST_USER = 'admin@wat365solution.co.uk'  # Your domain email
-EMAIL_HOST_PASSWORD = 'nyoreniit'  # Your domain email password
+EMAIL_HOST_PASSWORD = 'nyoreniit_1'  # Your domain email password
 DEFAULT_FROM_EMAIL = 'admin@wat365solution.co.uk'
 
 # CONTACT_EMAIL = 'contact@example.com'  # Email to receive contact form submissions
