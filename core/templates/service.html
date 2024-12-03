@@ -173,6 +173,114 @@
             bottom: 0;
           }
         }
+        .banner {
+    background-color: #007bff;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+
+.banner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.banner-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.banner-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.company-name {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 700;
+}
+
+.banner-text {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.banner-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: white;
+}
+
+.cta-text {
+    font-size: 1rem;
+}
+
+.cta-button {
+    background-color: white;
+    color: #007bff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .banner {
+        padding: 3rem 1.5rem;
+    }
+
+    .banner-title {
+        font-size: 2rem;
+    }
+
+    .banner-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        padding: 2rem 1rem;
+    }
+
+    .banner-title {
+        font-size: 1.75rem;
+    }
+
+    .banner-text {
+        font-size: 1.1rem;
+    }
+
+    .banner-cta {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+}
     </style>
 
   
@@ -239,7 +347,7 @@
         <!-- posts section -->
         <section id = "posts" class = "posts py">
           <div class = "section-head">
-            <h2>Why choose WAT365?</h2>
+            <h2>Why choose WAT365solution?</h2>
         </div>
             <div class = "container">
                 
@@ -280,13 +388,22 @@
         <!-- end of posts section -->
 
         <!-- banner one -->
-        <section id = "banner-one" class = "banner-one text-center">
-            <div class = "container text-white">
-                <blockquote class = "lead"><i class = "fas fa-quote-left"></i> <h2>At <span style="color: darkgray;">WAT365.co.uk</span>,</h2>We are commtted to delivering exceptional service with a personal touch. Let us help you build the team you needto succeed. <i class = "fas fa-quote-right"></i></blockquote>
-                <small class = "text text-sm">- For more information or to discuss your staffing needs,  
-                    <a href = "{% url 'contact' %}" class = "btn btn-blue">get in touch</a></small>
-            </div>
-        </section>
+        <section class="banner">
+          <div class="banner-container">
+              <div class="banner-content">
+                  <h1 class="banner-title">
+                      At <span class="company-name">WAT365solution</span>
+                  </h1>
+                  <p class="banner-text">
+                      We Are Committed To Delivering Exceptional Service With A Personal Touch. Let Us Help You Build The Team You Need To Succeed.
+                  </p>
+              </div>
+              <div class="banner-cta">
+                  <span class="cta-text">For more information or to discuss your staffing needs</span>
+                  <a href="{% url 'contact' %}" class="cta-button">get in touch</a>
+              </div>
+          </div>
+      </section>
         <!-- end of banner one -->
 
         <section class="contact-section">
