@@ -5,10 +5,12 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Revo|about us</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='{% static 'css/about.css' %}'>
     <link rel = "stylesheet" href = "{% static 'css/home.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
     <script src='{% static 'js/main.js' %}'></script>
     
     <style>
@@ -189,7 +191,7 @@
                     To be an extension of support, providing a reliable trustworthy and fully compliant emergency staffing experience as part of a long-term contingency plan. To work in partnership with clients to ensure they receive a fair and consistent service from highly trained individuals. Most importantly, to ensure those in need receive the best standard of care.
                     <br><br><h2>OUR VISION</h2>
                     To be honest, truthful, firm and fair. To help support and build a meaningful network between clients and candidates. To empower our candidates to reach their full potential and ensure all clients who work with us know we are there to support in a working partnership.</p>
-                <br><a href = "service.html" class = "btn btn-blue">Read More</a>
+                <br><a href = "{% url 'service' %}" class = "btn btn-blue">Read More</a>
             </div>
             <div class = "about-right flex">
                 <div class = "img">
@@ -204,7 +206,7 @@
     <div class = "container text-white">
         <blockquote class = "lead"><i class = "fas fa-quote-left"></i> <h2>At <span style="color: darkgray;">WAT365.co.uk</span>,</h2>We are commtted to delivering exceptional service with a personal touch. Let us help you build the team you needto succeed. <i class = "fas fa-quote-right"></i></blockquote>
         <small class = "text text-sm">- For more information or to discuss your staffing needs,  
-            <a href = "contact.html" class = "btn btn-blue">get in touch</a></small>
+            <a href = "{% url 'contact' %}" class = "btn btn-blue">get in touch</a></small>
     </div>
 </section>
 <!-- end of banner one -->
@@ -227,63 +229,28 @@
           </div>
 
           <!-- Contact Form -->
-          <div class="contact-form">
-              <div class="form-header">
-                  <h2>Contact Us</h2>
-                  <p class="subtitle">Reach Out To Us</p>
-              </div>
-
-              <form method="POST" action="{% url 'contact' %}">
-                {% csrf_token %}
-                <div class="form-group">
-                    <input 
-                        type="text" 
-                        class="form-control" 
-                        placeholder="Name" 
-                        name="name" 
-                        required
-                    />
-                </div>
-            
-                <div class="form-group">
-                    <input 
-                        type="email" 
-                        name="email" 
-                        class="form-control" 
-                        placeholder="Email" 
-                        required
-                    />
-                </div>
-            
-                <div class="form-group">
-                    <input 
-                        type="number" 
-                        name="phone" 
-                        class="form-control" 
-                        placeholder="Phone" 
-                    />
-                </div>
-            
-                <div class="form-group">
-                    <textarea 
-                        rows="4" 
-                        name="message" 
-                        placeholder="Your Message" 
-                        class="form-control" 
-                        required
-                    ></textarea>
-                </div>
-            
-                <button type="submit" class="submit-button">
-                    <span>Send Message</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </button>
-            </form>
-            
-          </div>
+          <div class="contact-info">
+            <div class="info-header">
+                <h2 style="font-size: 36px; font-weight: bold;">Contact Us</h2>
+                <p class="subtitle" style="font-size: 20px;">Reach Out To Us</p>
+            </div>
+        
+            <div class="contact-details" style="font-size: 24px; line-height: 1.5;">
+                <p><strong>Email:</strong> <a href="mailto:Admin@WAT-365.co.uk" style="font-size: 24px; color: inherit;">admin@wat365solution.co.uk</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+44(0)1212276980" style="font-size: 24px; color: inherit;">+44(0)1212276980</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+44(0)1212276980" style="font-size: 24px; color: inherit;">+44(0)7438367867</a></p>
+                <p><strong>Address:</strong></p>
+                <address style="font-size: 24px; color: black; font-weight: normal;">
+                    First House Association<br>
+                    1 Sutton Street<br>
+                    Ladywood<br>
+                    Birmingham<br>
+                    B1 1PE<br>
+                    England
+                </address>
+            </div>
+        </div>
+        
       </div>
   </div>
 </section>

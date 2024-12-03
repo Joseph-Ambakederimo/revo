@@ -5,10 +5,12 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Revo|service</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- <link rel = "stylesheet" href = "{% static 'home.css' %}"> -->
     <link rel = "stylesheet" href = "{% static 'css/service.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
     <script src='{% static 'js/main.js' %}'></script>
 
 
@@ -200,7 +202,7 @@
                         <div class="icon flex">
                             <i><b>Healthcare</b></i>
                         </div>
-                        <h3>WAT-365 Service</h3>
+                        <h3>WAT365 Service</h3>
                         <p class="text text-sm">Healthcare Staffing: We understand the importance of having reliable 
                            and qualified healthcare professionals to support your organization. At WAT-365, we supply 
                            a range of healthcare staff, including nurses, carers, and support workers, all carefully 
@@ -212,7 +214,7 @@
                         <div class="icon flex">
                             <i><b>Education</b></i>
                         </div>
-                        <h3>WAT-365 Service</h3>
+                        <h3>WAT365 Service</h3>
                         <p class="text text-sm">Teaching and Educational Support: Whether you need full-time teachers, 
                            WAT-365 is here to support schools and educational institutions. We pride ourselves on 
                            providing highly skilled, adaptable, and dedicated teaching staff that ensure a smooth learning experience for students.</p>
@@ -223,7 +225,7 @@
                         <div class="icon flex">
                             <i><b>Cleaning</b></i>
                         </div>
-                        <h3>WAT-365 Service</h3>
+                        <h3>WAT365 Service</h3>
                         <p class="text text-sm">Cleaning Services: Maintaining a clean environment is crucial for any business or 
                            institution. WAT-365 offers professional cleaning services tailored to your premises, ensuring a safe and 
                            hygienic environment.</p>
@@ -237,7 +239,7 @@
         <!-- posts section -->
         <section id = "posts" class = "posts py">
           <div class = "section-head">
-            <h2>Why choose WAT-365?</h2>
+            <h2>Why choose WAT365?</h2>
         </div>
             <div class = "container">
                 
@@ -304,63 +306,28 @@
                   </div>
       
                   <!-- Contact Form -->
-                  <div class="contact-form">
-                      <div class="form-header">
-                          <h2>Contact Us</h2>
-                          <p class="subtitle">Reach Out To Us</p>
-                      </div>
-      
-                      <form method="POST" action="{% url 'contact' %}">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <input 
-                                type="text" 
-                                class="form-control" 
-                                placeholder="Name" 
-                                name="name" 
-                                required
-                            />
-                        </div>
-                    
-                        <div class="form-group">
-                            <input 
-                                type="email" 
-                                name="email" 
-                                class="form-control" 
-                                placeholder="Email" 
-                                required
-                            />
-                        </div>
-                    
-                        <div class="form-group">
-                            <input 
-                                type="number" 
-                                name="phone" 
-                                class="form-control" 
-                                placeholder="Phone" 
-                            />
-                        </div>
-                    
-                        <div class="form-group">
-                            <textarea 
-                                rows="4" 
-                                name="message" 
-                                placeholder="Your Message" 
-                                class="form-control" 
-                                required
-                            ></textarea>
-                        </div>
-                    
-                        <button type="submit" class="submit-button">
-                            <span>Send Message</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </button>
-                    </form>
-                    
-                  </div>
+                  <div class="contact-info">
+                    <div class="info-header">
+                        <h2 style="font-size: 36px; font-weight: bold;">Contact Us</h2>
+                        <p class="subtitle" style="font-size: 20px;">Reach Out To Us</p>
+                    </div>
+                
+                    <div class="contact-details" style="font-size: 24px; line-height: 1.5;">
+                        <p><strong>Email:</strong> <a href="mailto:Admin@WAT-365.co.uk" style="font-size: 24px; color: inherit;">admin@wat365solution.co.uk</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+44(0)1212276980" style="font-size: 24px; color: inherit;">+44(0)1212276980</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+44(0)1212276980" style="font-size: 24px; color: inherit;">+44(0)7438367867</a></p>
+                        <p><strong>Address:</strong></p>
+                        <address style="font-size: 24px; color: black; font-weight: normal;">
+                            First House Association<br>
+                            1 Sutton Street<br>
+                            Ladywood<br>
+                            Birmingham<br>
+                            B1 1PE<br>
+                            England
+                        </address>
+                    </div>
+                </div>
+                
               </div>
           </div>
       </section>
